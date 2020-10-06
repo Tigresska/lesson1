@@ -21,7 +21,4 @@ def str_equal(string1, string2):
 
 print(str_equal('fgjh', 'learn'))
 
-# age = int(input('Введите ваш возраст: '))
-# prof = age_prof(age)
-# print(prof)
 
