@@ -1,10 +1,10 @@
-# nums = [1,2,3,4,5,6,7,8,9,10]
-# for num in nums:
-#     print(num+1)
+nums = [1,2,3,4,5,6,7,8,9,10]
+for num in nums:
+    print(num+1)
 
-# string = input('Введите строку:')
-# for char in string:
-#      print(char)
+string = input('Введите строку:')
+for char in string:
+     print(char)
 
 pupil_marks =[
     {'school_class': '4a', 'scores': [3,4,4,5,2]},
