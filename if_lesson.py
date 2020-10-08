@@ -1,15 +1,20 @@
 def discounted(price, discount, max_discount = 50, name = ''):
-    price = abs(float(price))
-    discount = abs(float(discount))
-    max_discount = abs(float(max_discount))
-    if max_discount > 99:
-        raise ValueError('Максимальная скидка не может быть больше 99%')
-    if discount >= max_discount or "iphone" in name.lower() or not name:
-        price_with_discount = price
-        
-    else:
-        price_with_discount = price - price * discount / 100
-    return price_with_discount
+    try:
+        price = abs(float(price))
+        discount = abs(float(discount))
+        max_discount = abs(int(max_discount))
+    
+    
+        if max_discount > 99:
+            raise ValueError('Максимальная скидка не может быть больше 99%')
+        if discount >= max_discount or "iphone" in name.lower() or not name:
+            price_with_discount = price
+            
+        else:
+            price_with_discount = price - price * discount / 100
+        return price_with_discount
+    except (ValueError, TypeError):
+        print("Неверный тип данных!")
 
 def format_price(price):
     price = int(price)
@@ -24,11 +29,11 @@ stock = [
 
 # product['with_discount'] = discounted(product['price'],product['discount'])
 
-# print(discounted(100,40))
+print(discounted(5,40,'s'))
 
 # test = format_price(56.24)
 # print(test)
 
-for phone in stock:
-		phone["price_final"] = discounted(phone["price"], phone["discount"], name=phone["name"])
-print(stock)
+# for phone in stock:
+# 		phone["price_final"] = discounted(phone["price"], phone["discount"], name=phone["name"])
+# print(stock)
